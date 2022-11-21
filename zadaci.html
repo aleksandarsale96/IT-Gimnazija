@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domaci</title>
+    <style>
+        .intro {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="intro">
+        <h1>Prva godina</h1>
+        <h2>Elektrotehnicar informacionih tehnologija</h2>
+        <h4>Aleksandar Milivojevic</h4>
+    </div>
+    <!-- zadatak 1 -->
+    <div>
+        <p>Zadatak 1:</p>
+        <p>Da li je broj pozitivan ili nije?</p>
+        <label>Unesi broj:</label>
+        <input type="number" id="positiveNegative" name="positiveNegative">
+        <button type="submit" onclick=racunica1()>Proveri</button>
+        <p id="rezultatPrvogZadatka"></p>
+    </div>
+
+    <!-- zadatak 2 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 2:</p>
+        <p>Paran ili neparan?</p>
+        <label>Unesi broj:</label>
+        <input type="number" id="paranNeparan" name="paranNeparan">
+        <button type="submit" onclick=paranIliNe()>Proveri</button>
+        <p id="rezultatDrugogZadatka"></p>
+    </div>
+
+    <!-- zadatak 3 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 3:</p>
+        <p>Odredjivanje manjeg broja</p>
+        <label>Unesi 2 broja:</label>
+        <br>
+        <input type="number" id="prviBroj" name="prviBroj">
+        <input type="number" id="drugiBroj" name="drugiBroj">
+        <div style="margin-top: 20px">
+            <button type="submit" onclick=veciManji()>Proveri koji je broj manji</button>
+        </div>
+        <p id="manjiBroj"></p>
+    </div>
+
+    <!-- Zadatak 4 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 4:</p>
+        <p>Da li je broj deljiv sa 4?</p>
+        <label>Unesi broj:</label>
+        <input type="number" id="deljivSa4" name="deljivSa4">
+        <button type="submit" onclick=deljivo()>Proveri</button>
+        <p id="deljiv"></p>
+    </div>
+
+    <!-- Zadatak 5 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 5</p>
+        <p>Proveriti da li je broj paran i manji od 15</p>
+        <label>Unesi broj:</label>
+        <input type="number" id="manjiOd15IliNe" name="manjiOd15IliNe">
+        <button type="submit" onclick=paranManjiOd15()>Proveri</button>
+        <p id="rezultatN"></p>
+    </div>
+
+    <!-- Zadatak 6 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 6:</p>
+        <p>Ako je broj manji od 7 (* 3), ako je veci (* 2)</p>
+        <label>Unesi broj:</label>
+        <input type="number" id="veceOd7" name='veceOd7'> 
+        <button type="submit" onclick=veciOd7()>Proveri</button>
+        <p id="veciIliManjiOd7"></p>
+    </div>
+
+    <!-- Zadatak 7 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 7:</p>
+        <p>Dvocifren broj, desetica</p>
+        <label>Uneti dvocifren broj:</label>
+        <input type="number" id="desetica" name="desetica">
+        <button id="deseticaJedinica" onclick=deseticaJedinica()>Proveri</button>
+        <p id="rezultatDesetice"></p>
+    </div>
+
+    <!-- Zadatak 8 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 8:</p>
+        <p>Ako je cifra stotine veca od cifre jedinice stampati cifru desetice, inace stampati uneti trocifreni broj</p>
+        <label>Uneti trocifreni broj:</label>
+        <input type="number" id="stotina" name="stotina">
+        <button type="submit" onclick=cifraStotine()>Proveri</button>
+        <p id="rezultatStotine"></p>
+    </div>
+
+    <!-- Zadatak 9 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 9:</p>
+        <p>Palindrom</p>
+        <label>Uneti trocifreni broj:</label>
+        <input type="number" id="palindrom" name="palindrom">
+        <button type="submit" onclick=palindromProvera()>Proveri</button>
+        <p id="rezultatPalindroma"></p>
+    </div>
+
+    <!-- Zadatak 10 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 10:</p>
+        <p>Pod A:</p>
+        <p>Uneti dvocifreni broj i videti ciji je zbir cifara veci</p>
+        <input type="number" id="prviPrirodniBroj" name="prviPrirodniBroj">
+        <input type="number" id="drugiPrirodniBroj" name="drugiPrirodniBroj">
+        <div style=" margin-top: 10px;">
+            <button type="submit" onclick=zbirCifara()>Proveri</button>
+        </div>
+        <p id="rezultatZbira"></p>
+        <p>Pod B</p>
+        <p>Najmanji od 3 uneta broja</p>
+        <input type="number" id="najmanji1" name="najmanji1">
+        <input type="number" id="najmanji2" name="najmanji2">
+        <input type="number" id="najmanji3" name="najmanji3">
+        <button type="submit" onclick=najmanjiBrojOd3()>Proveri najmanji broj</button>
+        <p id="najmanjiBroj"></p>
+    </div>
+
+    <!-- Zadatak 11 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 11:</p>
+        <p>Broj parnih brojeva</p>
+        <input type="number" id="paran1" name="paran1">
+        <input type="number" id="paran2" name="paran2">
+        <input type="number" id="paran3" name="paran3">
+        <button type="submit" onclick=brojParnih()>Proveri</button>
+        <p id="brojParnihBrojeva"></p>
+
+    </div>
+
+    <!-- Zadatak 12 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 12:</p>
+        <p>Gotovina i kredit</p>
+        <label>Cena proizvoda:</label>
+        <input type="number" id="cenaProizvoda" name="cenaProizvoda">
+        <label>Kolicina:</label>
+        <input type="number" id="kolicinaProizvoda" name="kolicinaProizvoda">
+        <button type="submit" onclick=gotovinaFunc()>Gotovina</button>
+        <button type="submit" onclick=kreditFunc()>Kredit</button>
+        <p id="racunicaCeneGotovine"></p>
+        <p id="racunicaCeneKredita"></p>
+    </div>
+
+    <!-- Zadatak 13 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 13:</p>
+        <p>Prikazati veci broj</p>
+        <label>Popuniti inpute</label>
+        <input type="number" id="broj1" name="broj1">
+        <input type="number" id="broj2" name="broj2">
+        <button type="submit" onclick=brojKojiJeVeci()>Proveri</button>
+        <p id="veciBrojPrikazati"></p>
+    </div>
+
+    <!-- Zadatak 14 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 14:</p>
+        <p>For loop neparni brojevi</p>
+        <label>a =</label>
+        <input type="number" name="inputNeparni1" id="inputNeparni1">
+        <label>b =</label>
+        <input type="number" name="inputNeparni2" id="inputNeparni2">
+        <button type="submit" onclick=neparFunc()>Proveri</button>
+        <p id="neparni"></p>
+    </div>
+
+    <!-- Zadatak 15 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 15:</p>
+        <p>Brojevi od a do b koji su deljivi sa 3</p>
+        <label>a =</label>
+        <input type="number" id="inputA" name="inputA">
+        <label>b =</label>
+        <input type="number" id="inputB" name="inputA">
+        <button type="submit" onclick=deljiviSa3()>Proveri</button>
+        <p id="deljiviBrojevi"></p>
+    </div>
+
+
+    <!-- Zadatak 16 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 16:</p>
+        <p>Brojevi od 1 do n (neparni)</p>
+        <label>1 do</label>
+        <input type="number" name="neparniBroj11" id="neparniBroj11">
+        <button type="submit" onclick=nepar()>Proveri</button>
+        <p id="neparBr"></p>
+    </div>
+
+    <!-- Zadatak 17 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 17:</p>
+        <p>Suma neparnih brojeva od 2 do 8:</p>
+        <p id="zbirNeparnihBrojeva"></p>
+    </div>
+
+    <!-- Zadatak 18 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 18:</p>
+        <p>While loop od 3 do 9:</p>
+        <p id="whilePetlja"></p>
+
+    </div>
+
+    <!-- Zadatak 19 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 19:</p>
+        <p>Proizvod brojeva koji su deljivi sa 3 (do-while)</p>
+        <input type="text" id="deljivPrvi" name="deljivPrvi">
+        <input type="text" id="deljivDrugi" name="deljivDrugi">
+        <button type="submit" onclick=deljivoWhileDo()>Proveri</button>
+        <p id="rezultatWhileDoSa3"></p>
+    </div>
+
+
+
+    <!-- Zadatak 20 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 20:</p>
+        <p>Broj parnih brojeva od 4 do 10 (do-while)</p>
+        <p id="doWhilePetlja"></p>
+    </div>
+
+    <!-- Zadatak 21 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 21</p>
+        <p>Dvostruka vrednost brojeva od 2 do 7</p>
+        <p id="dvostrukaVrednost"></p>
+    </div>
+   
+    <!-- Zadatak 22 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 22:</p>
+        <p>Aritmeticka sredina brojeva</p>
+        <label>Uneti broj:</label>
+        <input type="number" id="drugiAritmeticki" name="drugiAritmeticki">
+        <button type="submit" onclick=aritmetickaSredinaBrojeva()>Proveri</button>
+        <p id="aritmetickaSredina"></p>
+    </div>
+
+    <!-- Zadatak 23 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 23:</p>
+        <p>Cifra jedinice je veca od cifre desetice (trocifreni brojevi)</p>
+        <p id="cifraJediniceVeca"></p>
+    </div>
+
+    <!-- Zadatak 24 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 24:</p>
+        <p>Suma pozitivnih brojeva deljivih sa 4</p>
+        <label>Dimenzija n:</label>
+        <input type="number" id="dimenzijaN" name="dimenzijaN">
+        <label>od broja:</label>
+        <input type="number" id="prviUNizu" name="prviUNizu">
+        <label>do broja</label>
+        <input type="number" id="poslednjiUNizu" name="poslednjiUNizu">
+        <button type="submit" onclick=firstFunc(randomArr)>Proveri</button>
+        <p id="brojeviNizaN"></p>
+        <p id="resenjeN"></p>
+        <p id="resenjeNFinal"></p>
+    </div>
+
+    <!-- Zadatak 25 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 25:</p>
+        <p>Broj elemenata niza koji imaju vrednost 5</p>
+    </div>
+
+    <!-- Zadatak 26 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 26:</p>
+        <p>Proizvod pozitivnih i parnih brojeva</p>
+        <label>Dimenzija n:</label>
+        <input type="number" id="brojArrElemenata" name="brojArrElemenata">
+        <label>od broja:</label>
+        <input type="number" id="odBroja1" name="odBroja1">
+        <label>do broja:</label>
+        <input type="number" id="odBroja2" name="odBroja2">
+        <button type="submit" onclick=proizvodParnihBrojevaFunc(sviArr1)>Proveri</button>
+        <p id="sviBrojeviArr"></p>
+        <p id="izabraniBrojevi"></p>
+        <p id="proizvodBrojevaParnih"></p>
+    </div>
+
+
+    <!-- Zadatak 27 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 27:</p>
+        <p>Pronaci i odstampati najveci broj elementa niza a dimenzije n</p>
+        <label>Dimenzija n:</label>
+        <input type="number" id="dimenzijaNSort" name="dimenzijaNSort">
+        <label>od broja:</label>
+        <input type="number" id="prviNajveci" name="prviNajveci">
+        <label>do broja:</label>
+        <input type="number" id="drugiNajveci" name="drugiNajveci">
+        <button type="submit" onclick=nalazenjeNajvecegBroja()>Proveri</button>
+        <p id="nIzArr"></p>
+        <p id="numberNajveci"></p>
+    </div>
+    <!-- Zadatak 28 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 28:</p>
+        <p>Suma elemenata ciji je index veci od 3 a manji od 8</p>
+        <label>Dimenzija n:</label>
+        <input type="number" name="nBrojevaIndex" id="nBrojevaIndex">
+        <label>od broja:</label>
+        <input type="number" name="prviBrojIndex" id="prviBrojIndex">
+        <label>do broja:</label>
+        <input type="number" name="drugiBrojIndex" id="drugiBrojIndex">
+        <button type="submit" onclick=indexFunc()>Proveri</button>
+        <p id="izabraniBrojeviIzNiza"></p>
+        <p id="sabiranjeIndexBrojeva"></p>
+
+    </div>
+
+
+    <!-- Zadatak 29 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 29:</p>
+        <p>Proizvod negativnih i neparnih elementa niza</p>
+        <label>Dimenzija n:</label>
+        <input type="number" id="nBrojArr" name="nBrojArr">
+        <label>od broja:</label>
+        <input type="number" id="prviNegativni" name="prviNegativni">
+        <label>do broja:</label>
+        <input type="number" id="drugiNegativni" name="drugiNegativni">
+        <button type="submit" onclick=proizvodNegativnihBrojeva(ceoArr)>Proveri</button>
+        <p id="brojeviSviArr"></p>
+        <p id="nasumicniNegativniBr"></p>
+        <p id="proizvodNeparnihNegativnih"></p>
+    </div>
+
+    <!-- Zadatak 30 -->
+    <div style="margin-top: 50px;">
+        <p>Zadatak 30:</p>
+        <p>Niz sortirati u opadajuci poredak:</p>
+        <label>Dimenzija n: </label>
+        <input type="number" id="sortN" name="sortN">
+        <label>od broja:</label>
+        <input type="number" id="sortNajmanji" name="sortNajmanji">
+        <label>do broja:</label>
+        <input type="number" id="sortNajveci" name="sortNajveci">
+        <button type="submit" onclick=sortiranje()>Sortiraj</button>
+        <p id="sortiraniBrojevi"></p>
+    </div>
+    <script>
+        //zadatak 1:
+        function racunica1() {
+            let getValue = document.getElementById('positiveNegative').value;
+            if (getValue >= 0) {
+                rezultatPrvogZadatka.innerHTML = 'Broj je pozitivan';
+            } else if (getValue === '') {
+                rezultatPrvogZadatka.innerHTML = '';
+            }
+            else {
+                rezultatPrvogZadatka.innerHTML = 'Broj je negativan';
+            }
+        }
+
+        //zadatak 2:
+        function paranIliNe() {
+            let getValue2 = document.getElementById('paranNeparan').value;
+            if(getValue2 % 2 == 0) {
+                 rezultatDrugogZadatka.innerHTML = 'Broj je paran';
+            } else {
+                rezultatDrugogZadatka.innerHTML = 'Broj je neparan'
+            }
+        }
+
+        //zadatak 3:
+        function veciManji() {
+            let getValue3 = parseInt(document.getElementById('prviBroj').value);
+            let getValue4 = parseInt(document.getElementById('drugiBroj').value);
+            if(getValue3 < getValue4) {
+                manjiBroj.innerHTML = getValue3;
+            } else if(getValue4 < getValue3) {
+                manjiBroj.innerHTML = getValue4;
+            } else {
+                manjiBroj.innerHTML = 'Uneli ste iste brojeve'
+            }
+        }
+        
+        //zadatak 4:
+        function deljivo() {
+            let getValue5 = document.getElementById('deljivSa4').value;
+            if(getValue5 % 4 == 0) {
+                deljiv.innerHTML = 'Broj je deljiv sa 4'
+            } else {
+                deljiv.innerHTML = 'Broj nije deljiv sa 4'
+            }
+        }
+
+        //zadatak 5:
+        function paranManjiOd15() {
+            let getValue6 = document.getElementById('manjiOd15IliNe').value;
+            if (getValue6 % 2 == 0 && getValue6 < 15) {
+                rezultatN.innerHTML = 'Broj je paran i manji od 15'
+            } else if ( getValue6 > 15) {
+                rezultatN.innerHTML = 'Broj je veci od 15'
+            } else {
+                rezultatN.innerHTML = 'Broj je manji od 15'
+            }
+        }
+
+        //zadatak 6:
+        function veciOd7() {
+            let getValue7 = document.getElementById('veceOd7').value;
+            if(getValue7 >= 7) {
+               veciIliManjiOd7.innerHTML = getValue7 * 2;
+            } else if(getValue7 < 7) {
+                veciIliManjiOd7.innerHTML = getValue7 * 3;
+            } else {
+                veciIliManjiOd7.innerHTML = ''
+            }
+        }
+
+        //zadatak 7:
+        function deseticaJedinica() {
+            let getValue8 = document.getElementById('desetica').value;
+            let getValue9 = getValue8.substr(0, 1);
+            let getValue10 = getValue8.substr(1);
+            if (getValue9 > getValue10) {
+                rezultatDesetice.innerHTML = getValue9;
+            } else if (getValue10 > getValue9) {
+                rezultatDesetice.innerHTML = getValue10;
+            } else if (getValue10 === getValue9) {
+                rezultatDesetice.innerHTML = 'Uneli ste iste brojeve';
+            } else {
+                rezultatDesetice.innerHTML = '';
+            }
+        }
+        //zadatak 8:
+        function cifraStotine(){
+            let getValue11 = document.getElementById('stotina').value;
+            //cifra stotine
+            getValue12 = getValue11.substr(0, 1);
+            //cifra desetice
+            getValue13 = getValue11.substr(0, 2);
+            const secondDigitStr = String(getValue13)[1];
+            //cifra jedinice
+            getValue14 = getValue11.substr(2);
+            console.log(getValue11);
+            console.log(getValue12);
+            console.log(secondDigitStr);
+            console.log(getValue14);
+            if(getValue12 > getValue14 ) {
+                rezultatStotine.innerHTML = secondDigitStr;
+            } else {
+                rezultatStotine.innerHTML = getValue11;
+            }
+        }
+
+        //zadatak 9:
+        function palindromProvera() {  
+            let getPalindrom = document.getElementById('palindrom').value;
+            const len = getPalindrom.length;  
+            for (let i = 0; i < len / 2; i++) {  
+                if (getPalindrom[i] !== getPalindrom[len - 1 - i]) {  
+                rezultatPalindroma.innerHTML = 'Nije palindrom'
+                return;
+                } else {
+                    rezultatPalindroma.innerHTML = 'Jeste palindrom'
+                }  
+            }  
+        }  
+
+        //zadatak 10:
+        function zbirCifara() {
+            let prviZbir = parseInt(document.getElementById('prviPrirodniBroj').value);
+            let drugiZbir = parseInt(document.getElementById('drugiPrirodniBroj').value);
+            if (prviZbir > drugiZbir) {
+                rezultatZbira.innerHTML = 'Zbir prvog inputa je veci'
+            } else if (drugiZbir > prviZbir) {
+                rezultatZbira.innerHTML = 'Zbir drugog inputa je veci'
+            } else {
+                rezultatZbira.innerHTML = 'Brojevi su jednaki'
+            }
+        }
+
+        //zadatak 10 pod B:
+        function najmanjiBrojOd3() {
+            let prviNajmanji = parseInt(document.getElementById('najmanji1').value);
+            let drugiNajmanji = parseInt(document.getElementById('najmanji2').value);
+            let treciNajmanji = parseInt(document.getElementById('najmanji3').value);
+            if (prviNajmanji < drugiNajmanji && prviNajmanji < treciNajmanji) {
+                najmanjiBroj.innerHTML = prviNajmanji;
+            } else if (drugiNajmanji < prviNajmanji && drugiNajmanji < treciNajmanji) {
+                najmanjiBroj.innerHTML = drugiNajmanji;
+            } else if (treciNajmanji < prviNajmanji && treciNajmanji < drugiNajmanji) {
+                najmanjiBroj.innerHTML = treciNajmanji;
+            }
+        }
+
+        //zadatak 11 NIJE ZAVRSEN:
+        function brojParnih() {
+            let prviParanBroj = parseInt(document.getElementById('paran1').value);
+            let drugiParanBroj = parseInt(document.getElementById('paran2').value);
+            let treciParanBroj = parseInt(document.getElementById('paran3').value);
+            let arr1 = [];
+
+            arr1.push(prviParanBroj, drugiParanBroj, treciParanBroj);
+             for (var i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 === 0) {
+                brojParnihBrojeva.innerHTML = arr1.length;
+            }
+        }
+        brojParnih();
+        }
+
+        //zadatak 12:
+        function gotovinaFunc() {
+            let cenaProizvodaValue = parseInt(document.getElementById('cenaProizvoda').value);
+            let kolicinaProizvodaValue = parseInt(document.getElementById('cenaProizvoda').value);
+            let gotovinaRacunica = cenaProizvodaValue * kolicinaProizvodaValue;
+            racunicaCeneGotovine.innerHTML = gotovinaRacunica;
+        }
+        function kreditFunc() {
+            let cenaProizvodaValue = parseInt(document.getElementById('cenaProizvoda').value);
+            let kolicinaProizvodaValue = parseInt(document.getElementById('cenaProizvoda').value);
+            let kreditRacunicaBezProcenta = cenaProizvodaValue * kolicinaProizvodaValue;
+            let kreditRacunicaSaProcentom = (kreditRacunicaBezProcenta / 100) * 6 + kreditRacunicaBezProcenta;
+            racunicaCeneKredita.innerHTML = kreditRacunicaSaProcentom;
+            
+        }
+
+        //zadatak 13:
+        function brojKojiJeVeci() {
+            let brojBroj1 = parseInt(document.getElementById('broj1').value);
+            let brojBroj2 = parseInt(document.getElementById('broj2').value);
+            if (brojBroj1 > brojBroj2) {
+                veciBrojPrikazati.innerHTML = 'Veci broj je ' + brojBroj1;
+            } else if(brojBroj2 > brojBroj1) {
+                veciBrojPrikazati.innerHTML = 'Veci broj je ' + brojBroj2;
+            } else {
+                veciBrojPrikazati.innerHTML = '';
+            }
+        }
+
+        //zadatak 14:
+        function neparFunc() {
+            let neparInput1 = parseInt(document.getElementById('inputNeparni1').value);
+            let neparInput2 = parseInt(document.getElementById('inputNeparni2').value);
+            var arrNepar = [];
+            let odd;
+            for(var i = neparInput1; i <= neparInput2; i++){
+                if(i % 2 != 0){
+                arrNepar.push(i)   
+                }
+            }
+            console.log(arrNepar);
+            neparni.innerHTML = arrNepar;
+        }
+
+        //zadatak 15:
+        function deljiviSa3() {
+            let input3prvi = parseInt(document.getElementById('inputA').value);
+            let input3drugi = parseInt(document.getElementById('inputB').value);
+            let arrDeljiv = [];
+            for(var i = input3prvi; i <= input3drugi; i++){
+                if(i % 3 === 0){
+                arrDeljiv.push(i)   
+                }
+            }
+            deljiviBrojevi.innerHTML = arrDeljiv;
+        }
+
+        //zadatak 16:
+        function nepar() {
+            let input1 = 1;
+            let inputNeparDrugi = parseInt(document.getElementById('neparniBroj11').value);
+            let arrayNeparnihBrojeva = [];
+            for(var i = input1; i <= inputNeparDrugi; i++){
+                if(i % 2 != 0){
+                arrayNeparnihBrojeva.push(i); 
+                }
+            }
+             neparBr.innerHTML = arrayNeparnihBrojeva;
+        }
+
+        //zadatak 17:
+         function zbirN() {
+            let getA = parseInt(2);
+            let getB = parseInt(8);
+            let neparArr = [];
+            let sabiranje = 0;
+            for (let i = getA; i < getB; i++) {
+                if(i % 2 != 0){
+                    neparArr.push(i);
+                    sabiranje = sabiranje + i;
+                }
+            }
+            zbirNeparnihBrojeva.innerHTML = sabiranje;
+        }
+        zbirN();
+
+        // Zadatak 18:
+        function vajlPetlja() {
+            let prviA = 2;
+            let drugiB = 9;
+            let vajlArr = [];
+            while (prviA < drugiB) {
+                prviA++
+                vajlArr.push(prviA);
+            }
+            whilePetlja.innerHTML = vajlArr;
+        }
+        vajlPetlja();
+
+        // Zadatak 19:
+        function deljivoWhileDo() {
+            let prviWhileBroj = parseInt(document.getElementById('deljivPrvi').value);        
+            let drugiWhileBroj = parseInt(document.getElementById('deljivDrugi').value); 
+            let triDeljivo = 1;
+            let deljivArej = [];
+     
+            let i = prviWhileBroj;
+            do {
+                i = i + 1;
+                if (i % 3 == 0) {
+                    console.log(i);
+                    deljivArej.push(i);
+                    triDeljivo = triDeljivo * i;
+                }
+                rezultatWhileDoSa3.innerHTML = triDeljivo;
+            } while (i < drugiWhileBroj);
+        }    
+
+        // Zadatak 20:
+        function doWhileLoop() {
+            let ii = 4;
+            count2 = 0;
+            do {
+                if (ii % 2 === 0) {
+                    count2++
+                    doWhilePetlja.innerHTML = count2;
+                } 
+                ii++
+            }
+            while (ii <= 10);
+        }
+        doWhileLoop();
+        
+        // Zadatak 21:
+        function dvostruko() {
+            let zbirDvaDoSedam = [2,3,4,5,6,7];
+            i2 = zbirDvaDoSedam.length;
+            e = 0;
+            while (i2--) {
+                e += zbirDvaDoSedam[i2];
+            }
+            dvostrukaVrednost.innerHTML = 'Zbir brojeva iznosi: ' + e;
+        }
+        dvostruko();
+        
+        // Zadatak 22:
+        function aritmetickaSredinaBrojeva() {
+            let prviAritmetickiBroj = 1;
+            let drugiAritmetickiBroj = parseInt(document.getElementById('drugiAritmeticki').value);
+            let aritmetickiArr = [];
+            
+            for (let i = prviAritmetickiBroj; i <= drugiAritmetickiBroj; i++) {
+                let brojeviAreja = i;
+                aritmetickiArr.push(brojeviAreja);
+            }
+            console.log(aritmetickiArr);
+
+            var findArithmeticMean = () => {
+                let sum1 = 0;
+                for (var iii = 0; iii < aritmetickiArr.length; iii++){
+                    sum1 += aritmetickiArr[iii];
+                    aritmetickaSredina.innerHTML = sum1 / aritmetickiArr.length;
+                }
+            }
+            findArithmeticMean();
+        }
+        aritmetickaSredinaBrojeva();
+
+        // Zadatak 23:
+        function jedinaVecaOdDesetice() {
+            let jedinicaVeca = 100;
+            let trocifreniNajveci = 999;
+            let arrTrocifreni = [];
+            let jedinicaVecaArr = [];
+            for (let i = jedinicaVeca; i <= trocifreniNajveci; i++) {
+                var trocifreniSvi = i;
+                arrTrocifreni.push(trocifreniSvi);
+                console.log(trocifreniSvi);
+                // jedinice
+                let trocifreniJedinica = trocifreniSvi.toString().slice(-1);
+
+                // desetice
+                let trocifreniDesetica = trocifreniSvi.toString().slice(1, -1);
+
+                if (trocifreniJedinica > trocifreniDesetica){
+                    jedinicaVecaArr.push(trocifreniSvi);
+                    console.log(trocifreniSvi);
+                    cifraJediniceVeca.innerHTML = jedinicaVecaArr;
+                }
+            }
+            console.log(jedinicaVecaArr); 
+        }
+        jedinaVecaOdDesetice();
+
+
+        // Zadatak 24:
+        function pozitivniDeljiviSa4(min, max) {
+            min = Math.ceil(min); 
+            max = Math.floor(max); 
+            return Math.floor(Math.random() * (max - min)) + min; 
+        }
+
+        let randomArr = [];
+        let newArr = [];
+
+        function firstFunc (a) { 
+            let min = parseInt(document.getElementById('prviUNizu').value);
+            let max = parseInt(document.getElementById('poslednjiUNizu').value);
+            let n = parseInt(document.getElementById('dimenzijaN').value);
+            
+            for (let i = 0; i < n; i++) { 
+                let arrElem = pozitivniDeljiviSa4(min, max); 
+                randomArr.push(arrElem); 
+            } 
+            for (let i = 0; i < a.length; i++) { 
+                let item = a[i]; 
+                if(item > 0 && item % 4 === 0) { 
+                    console.log(item); 
+                    newArr.push(item); 
+                } 
+            } 
+            brojeviNizaN.innerHTML = a.length + ' nasumicnih brojeva niza su: ' + a;
+            resenjeN.innerHTML = 'Nasumicni pozitivni brojevi iz niza koji su deljivi sa 4 su: ' + newArr;
+            const zbirSvihElemenata = newArr.reduce(function (a,b) {return a+b;}, 0);
+            resenjeNFinal.innerHTML = 'Zbir svih pozitivnih brojeva deljivih sa 4 je: ' + zbirSvihElemenata;
+        }
+
+        // Zadatak 25:
+
+
+        // Zadatak 26:
+        function proizvodParnihBrojeva(prvi, drugi) {
+            prvi = Math.ceil(prvi); 
+            drugi = Math.floor(drugi); 
+            return Math.floor(Math.random() * (drugi - prvi)) + prvi; 
+        }
+
+        let sviArr1 = [];
+        let proizvodParnihArr = [];
+
+        function proizvodParnihBrojevaFunc(b) {
+            let prvi = parseInt(document.getElementById('odBroja1').value);
+            let drugi = parseInt(document.getElementById('odBroja2').value);
+            let nNiz = parseInt(document.getElementById('brojArrElemenata').value);
+
+            for (let i = 0; i < nNiz; i++) {
+                let arrElements = proizvodParnihBrojeva(prvi, drugi); 
+                sviArr1.push(arrElements);
+            }
+            for (let i = 0; i < b.length; i++) {
+                let item = b[i];
+                if (item > 0 && item % 2 === 0) {
+                    proizvodParnihArr.push(item);
+                }
+            }
+            sviBrojeviArr.innerHTML = b.length + ' nasumicnih brojeva niza: ' + b;
+            izabraniBrojevi.innerHTML = 'Nasumicni pozitivni brojevi iz niza koji su parni su: ' + proizvodParnihArr;
+            const mnozenjeSvihElemenata = proizvodParnihArr.reduce(function (a,b) {return a*b;}, 1);
+            proizvodBrojevaParnih.innerHTML = 'Proizvod pozitivnih parnih brojeva je: ' + mnozenjeSvihElemenata;
+        }
+
+
+        // Zadatak 27:
+        function proizvoljniBrojevi(prvii, drugii) {
+            prvii = Math.ceil(prvii); 
+            drugii = Math.floor(drugii); 
+            return Math.floor(Math.random() * (drugii - prvii)) + prvii; 
+        }
+
+        let arrBig = [];
+        let najveciBr = 0
+
+        function nalazenjeNajvecegBroja() {
+            let nn = parseInt(document.getElementById('dimenzijaNSort').value);
+            let prviNajveciBrr = parseInt(document.getElementById('prviNajveci').value);
+            let drugiNajveciBrr = parseInt(document.getElementById('drugiNajveci').value);
+
+            for (let i = 0; i < nn; i++) {
+                let sviBrr = proizvoljniBrojevi(prviNajveciBrr, drugiNajveciBrr);
+                arrBig.push(sviBrr); 
+            }
+            console.log(arrBig);
+            for (i=0; i<arrBig.length; i++){
+                if (arrBig[i]>najveciBr) {
+                    najveciBr=arrBig[i];
+                }
+            }
+            console.log(najveciBr);
+            nIzArr.innerHTML = 'Niz brojeva: ' + arrBig;
+            numberNajveci.innerHTML = 'Najveci broj je: ' + najveciBr;
+        }
+        
+
+        // Zadatak 28:
+        function proizvodBrojeva(prviIndex, drugiIndex) {
+            prviIndex = Math.ceil(prviIndex); 
+            drugiIndex = Math.floor(drugiIndex); 
+            return Math.floor(Math.random() * (drugiIndex - prviIndex)) + prviIndex; 
+        }
+
+        let arrCeo = [];
+        function indexFunc() {
+            let nDimenzija = parseInt(document.getElementById('nBrojevaIndex').value);
+            let prviIndexBroj = parseInt(document.getElementById('prviBrojIndex').value);
+            let drugiIndexbroj = parseInt(document.getElementById('drugiBrojIndex').value);
+            for (let i = 0; i < nDimenzija; i++) {
+                let arrBrojeviSvi = proizvodBrojeva(prviIndexBroj, drugiIndexbroj);
+                arrCeo.push(arrBrojeviSvi);
+                console.log(arrCeo.indexOf(arrBrojeviSvi));
+                if(arrCeo.indexOf(arrBrojeviSvi) > 3 && arrCeo.indexOf(arrBrojeviSvi) <8) {
+                    const sabiranjeIndexaBrojeva = arrCeo.reduce(function (a,b) {return a+b;}, 1);
+                    console.log(sabiranjeIndexaBrojeva);
+                    sabiranjeIndexBrojeva.innerHTML = 'Veci od indexa 3 a manji od indexa 8 => zbir brojeva: ' + sabiranjeIndexaBrojeva;
+                }
+            }
+            izabraniBrojeviIzNiza.innerHTML = 'Brojevi niza su: ' + arrCeo;
+
+            console.log(arrCeo);
+        }
+
+
+         // Zadatak 29:
+        function proizvodBrojeva(prviNegativ, drugiNegativ) {
+            prvi = Math.ceil(prviNegativ); 
+            drugi = Math.floor(drugiNegativ); 
+            return Math.floor(Math.random() * (drugiNegativ - prviNegativ)) + prviNegativ; 
+        }
+        let ceoArr = [];
+        let proizvodNegativnihArr = [];
+
+        function proizvodNegativnihBrojeva(c) {
+            let n = parseInt(document.getElementById('nBrojArr').value);
+            let prviNegativ = parseInt(document.getElementById('prviNegativni').value);
+            let drugiNegativ = parseInt(document.getElementById('drugiNegativni').value);
+            console.log(n);
+            console.log(prviNegativ);
+            console.log(drugiNegativ);
+            for (let i = 0; i < n; i++) {
+                let elementiAreja = proizvodBrojeva(prviNegativ, drugiNegativ);
+                ceoArr.push(elementiAreja);
+            }
+            console.log(ceoArr);
+            for (let i = 0; i < c.length; i++) {
+                let item = c[i];
+                if(item < 0 && item % 2 !== 0) {
+                    proizvodNegativnihArr.push(item);
+                }
+            }
+            console.log(proizvodNegativnihArr);
+            console.log(c.length);
+            brojeviSviArr.innerHTML = c.length + 'nasumicnih brojeva niza: ' + c;
+            nasumicniNegativniBr.innerHTML = 'Nasumicni negativni neparni brojevi iz niza su: ' + proizvodNegativnihArr;
+            const mnozenjeNegativa = proizvodNegativnihArr.reduce(function (a,b) {return a*b;}, 1);
+            proizvodNeparnihNegativnih.innerHTML = 'Proizvod neparnih negativnih brojeva je: ' + mnozenjeNegativa;
+
+        }
+        
+        // Zadatak 30:
+        function proizvoljniBrojevi(prvi1, drugi2) {
+            prvi1 = Math.ceil(prvi1);
+            drugi2 = Math.floor(drugi2);
+            return Math.floor(Math.random() * (drugi2 - prvi1)) + prvi1; 
+        }
+        let obicanArr = [];
+
+        function sortiranje() {
+            let n = parseInt(document.getElementById('sortN').value);
+            let prvi1 = parseInt(document.getElementById('sortNajmanji').value);
+            let drugi2 = parseInt(document.getElementById('sortNajveci').value); 
+
+            for (let i = 0; i < n; i++) {
+                let elArr = proizvoljniBrojevi(prvi1, drugi2);
+                obicanArr.push(elArr);
+            }
+            console.log(obicanArr);
+            obicanArr.sort(function (a, b) {return b - a});
+            sortiraniBrojevi.innerHTML = obicanArr;
+        }
+
+    </script>
+</body>
+</html>
